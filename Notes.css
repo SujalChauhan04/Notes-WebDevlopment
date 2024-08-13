@@ -1,0 +1,531 @@
+CSS
+
+
+
+1. Inline, Internal & External CSS
+Inline CSS: Applied directly to HTML elements using the style attribute.
+
+html
+Copy code
+<p style="color: blue; font-size: 20px;">This is an inline CSS example.</p>
+Internal CSS: Defined within the <style> tag in the <head> section of your HTML.
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    p {
+      color: red;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <p>This is an internal CSS example.</p>
+</body>
+</html>
+External CSS: Stored in a separate .css file and linked to your HTML.
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p>This is an external CSS example.</p>
+</body>
+</html>
+styles.css
+
+css
+Copy code
+p {
+  color: green;
+  font-size: 16px;
+}
+
+
+
+2. CSS Selectors
+Element Selector: Targets all elements of a specific type.
+
+css
+Copy code
+p {
+  color: blue;
+}
+Class Selector: Targets elements with a specific class.
+
+css
+Copy code
+.myClass {
+  color: red;
+}
+ID Selector: Targets a unique element with a specific ID.
+
+css
+Copy code
+#myId {
+  color: green;
+}
+Attribute Selector: Targets elements with a specific attribute.
+
+css
+Copy code
+input[type="text"] {
+  border: 1px solid black;
+}
+
+
+
+3. CSS Box Model - Margin, Padding & Borders
+Margin: Space outside the border.
+
+css
+Copy code
+div {
+  margin: 20px; /* Space outside the border */
+}
+Padding: Space inside the border, between the border and content.
+
+css
+Copy code
+div {
+  padding: 10px; /* Space inside the border */
+}
+Borders: Borders around the padding.
+
+css
+Copy code
+div {
+  border: 2px solid black; /* Border around the element */
+}
+
+
+
+4. CSS Fonts, Text & Color Properties
+Font Properties
+
+css
+Copy code
+p {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+Text Properties
+
+css
+Copy code
+p {
+  text-align: center;
+  line-height: 1.5;
+}
+Color Properties
+
+css
+Copy code
+p {
+  color: #ff5733; /* Hex color */
+}
+
+
+
+5. CSS Specificity and Cascade
+Specificity: Determines which styles are applied. The order is Inline CSS > IDs > Classes > Elements.
+
+css
+Copy code
+/* Element Selector */
+p {
+  color: blue;
+}
+
+/* Class Selector */
+.myClass {
+  color: red;
+}
+
+/* ID Selector */
+#myId {
+  color: green;
+}
+Inline CSS Example
+
+html
+Copy code
+<p style="color: purple;">This text is purple.</p>
+
+
+
+6. Sizing Units
+Pixels (px)
+
+css
+Copy code
+p {
+  font-size: 16px;
+}
+Rem (rem): Relative to the root element’s font size.
+
+css
+Copy code
+p {
+  font-size: 1.5rem;
+}
+Em (em): Relative to the font size of the parent element.
+
+css
+Copy code
+p {
+  font-size: 1.2em;
+}
+Viewport Height (vh) and Width (vw)
+
+css
+Copy code
+div {
+  height: 50vh; /* 50% of the viewport height */
+  width: 50vw;  /* 50% of the viewport width */
+}
+Percentage (%)
+
+css
+Copy code
+div {
+  width: 80%; /* 80% of the parent container's width */
+}
+
+
+
+
+7. Display Property
+Block: Takes up the full width and starts on a new line.
+
+css
+Copy code
+div {
+  display: block;
+}
+Inline: Stays on the same line as other elements.
+
+css
+Copy code
+span {
+  display: inline;
+}
+Flex: Makes a container a flex container for flexible layouts.
+
+css
+Copy code
+.container {
+  display: flex;
+}
+Grid: Makes a container a grid for creating grid-based layouts.
+
+css
+Copy code
+.container {
+  display: grid;
+}
+
+
+
+
+8. Shadows and Outlines
+Box Shadow
+
+css
+Copy code
+div {
+  box-shadow: 2px 2px 5px grey; /* x-offset, y-offset, blur-radius, color */
+}
+Text Shadow
+
+css
+Copy code
+p {
+  text-shadow: 1px 1px 2px black; /* x-offset, y-offset, blur-radius, color */
+}
+Outline
+
+css
+Copy code
+div {
+  outline: 2px solid red; /* Outline with color */
+}
+
+
+
+
+9. Styling Lists
+Unordered List
+
+css
+Copy code
+ul {
+  list-style-type: disc; /* Bullets */
+}
+
+ul li {
+  color: blue;
+}
+Ordered List
+
+css
+Copy code
+ol {
+  list-style-type: decimal; /* Numbers */
+}
+
+ol li {
+  color: green;
+}
+
+
+
+
+10. Overflow Property
+Overflow: Controls content overflow behavior.
+
+css
+Copy code
+div {
+  overflow: hidden; /* Hides overflowed content */
+}
+
+div {
+  overflow: scroll; /* Adds scrollbars */
+}
+
+div {
+  overflow: auto; /* Adds scrollbars only when necessary */
+}
+
+
+
+
+11. Position Property
+Static: Default positioning.
+
+css
+Copy code
+div {
+  position: static;
+}
+Relative: Positioned relative to its normal position.
+
+css
+Copy code
+div {
+  position: relative;
+  top: 10px; /* Moves element down by 10px */
+}
+Absolute: Positioned relative to the nearest positioned ancestor.
+
+css
+Copy code
+div {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+Fixed: Positioned relative to the viewport.
+
+css
+Copy code
+div {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+Sticky: Sticks to the viewport until a certain scroll position is reached.
+
+css
+Copy code
+div {
+  position: sticky;
+  top: 0; /* Sticks to the top of the viewport */
+}
+
+
+
+
+12. CSS Variables
+Define and use CSS variables for reusable values.
+
+css
+Copy code
+:root {
+  --main-color: #3498db;
+}
+
+p {
+  color: var(--main-color);
+}
+
+
+
+
+13. CSS Media Queries
+Apply styles based on viewport size.
+
+css
+Copy code
+@media (max-width: 600px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+
+
+
+14. Float and Clear
+Float: Moves elements to the left or right.
+
+css
+Copy code
+img {
+  float: left;
+  margin-right: 10px;
+}
+Clear: Clears floating elements.
+
+css
+Copy code
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+15. Flexbox
+Flexbox: Create flexible layouts with containers and items.
+
+css
+Copy code
+.container {
+  display: flex;
+  justify-content: space-between; /* Aligns items horizontally */
+  align-items: center; /* Aligns items vertically */
+}
+
+.item {
+  flex: 1; /* Flex grow/shrink property */
+}
+
+
+
+
+16. Grid
+Grid: Create grid-based layouts.
+
+css
+Copy code
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 10px; /* Space between grid items */
+}
+
+.item {
+  background-color: lightblue;
+}
+
+
+
+
+17. Transforms
+Transforms: Apply 2D and 3D transformations.
+
+css
+Copy code
+.transform {
+  transform: rotate(45deg) scale(1.2);
+}
+
+
+
+
+18. Transition Property
+Transitions: Animate changes in CSS properties.
+
+css
+Copy code
+.box {
+  transition: background-color 0.5s ease;
+}
+
+.box:hover {
+  background-color: red;
+}
+
+
+
+
+19. Animations and Keyframes
+Animations: Create animations with @keyframes.
+
+css
+Copy code
+@keyframes move {
+  from { transform: translateX(0); }
+  to { transform: translateX(100px); }
+}
+
+.animated {
+  animation: move 2s infinite;
+}
+
+
+
+
+
+20. Object Fit and Object Cover
+Object Fit: Control how an image fits within its container.
+
+css
+Copy code
+img {
+  object-fit: cover; /* Cover the container */
+}
+
+img {
+  object-fit: contain; /* Fit within the container */
+}
+
+
+
+
+21. Filters
+Filters: Apply graphical effects like blur and brightness.
+
+css
+Copy code
+img {
+  filter: brightness(0.5) contrast(1.2);
+}
+
+
+
+
+
+These notes should provide a clear and comprehensive understanding of CSS
+
+
+
+
+
